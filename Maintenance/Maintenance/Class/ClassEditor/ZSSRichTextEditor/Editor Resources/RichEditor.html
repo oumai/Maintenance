@@ -1,0 +1,147 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>编辑器</title>
+    <link href="richEditor.css" rel="stylesheet" />
+    <!-- richEditor_css -->
+    <link href="richEditor_page.css" rel="stylesheet" />
+    <!-- richEditor_page -->
+
+    <script src="jquery-1.10.2.min.js"></script>
+    <!-- jquery-1.10.2.min -->
+    <style>
+        .toolbar{
+        	display: none;
+            background-color:antiquewhite;height: 40px;width: 100%;position: fixed;bottom: 0;padding:5px;
+        }
+        .toolbar a{
+            margin-right:5px;
+            font-size:18px;
+        }
+    </style>
+</head>
+
+<body >
+    <div class="toolbar" >
+        <a class="icon-reply" href="javascript: RE.undo();"></a>
+        <a class="icon-share-alt" href="javascript:RE.redo()"></a>
+        <a class="icon-bold" href="javascript:RE.setBold();"></a>
+        <a class="icon-italic" href="javascript:RE.setItalic();"></a>
+        <a class="icon-picture" href="javascript:RE.redo();"></a>
+        <a class="" href="javascript:RE.setHeading('H1')">H1</a>
+        <a class="" href="javascript:RE.setHeading('H2')">H2</a>
+        <a class="" href="javascript:RE.setHeading('H3')">H3</a>
+        <a class="" href="javascript:RE.setHeading('H4')">H4</a>
+        <a style="font-size:16px;" href="javascript:RE.prepareInsert();RE.insertHorizontalRule();"><b>分割线</b></a>
+    </div>
+    <div class="header">
+    	
+    	<input type="text" id="title" name="title" placeholder="请输入标题" maxlength="20"/>
+    </div>
+    <div class="summary">
+    	<textarea id="summary" name="" rows="3"  placeholder="请输入简介"  maxlength="50"></textarea>
+    </div>
+    
+ 
+    	<div id="editor" contenteditable="true">
+    		
+    	</div>
+    
+    
+    <script src="richEditor.js"></script>
+    <!-- richEditor_js -->
+    <script type="text/javascript">
+    	
+    	var eleTitle=document.getElementById("title");
+    	var eleSummary=document.getElementById("summary");
+    	
+    	
+    	var page={};
+    	
+    	
+    	
+    	//get textContext
+    	page.getTitle=function(){
+    	 //   window.LocalObject.getTitle(eleTitle.value);
+    		return eleTitle.value;
+    	}
+    	
+    	page.getSummary=function () {
+    	//window.LocalObject.getDes(eleSummary.value);
+    		return eleSummary.value;
+    	}
+    
+    	
+    	page.getContent=function () {
+    	//    window.LocalObject.getContent(RE.getHtml());
+    		return RE.getHtml();
+    	}
+    	
+    	page.getPage=function(){
+    		//window.LocalObject.getPage(eleTitle.value,eleSummary.value,RE.getHtml());
+    		return {
+    			title:eleTitle.value,
+    			summary:eleSummary.value,
+    			content:RE.getHtml()
+    		}
+    	}
+    
+       page.getTextLength=function(){
+        var text=$.trim($("#editor").text());
+        return text.length;
+        }
+
+    	
+    	//set textContext
+    	
+    	page.setTitle=function(value){
+    		 eleTitle.value=value;
+    	}
+    	
+    	page.setSummary=function (value) {
+    		 eleSummary.value=value;
+    	}
+    	
+    	page.setContent=function (value) {
+    		//RE.editor.innerHTML=value
+            $("#editor").html(value);
+            
+          //  var num = $("img").length;
+         //   var sum = 0;
+         //   $('img').each(function () {
+               //           $(this).load(function () {
+                                //       sum++;
+                                //       window.location.href = "re-state://img_loaded"
+                              //         if (sum == num) {
+                              //         window.location.href = "re-state://img_loaded"
+                               //        }
+                              //         });
+                        //  });
+
+    	}
+    
+        page.getHeight=function(){
+        return $("body").height()
+        }
+    	
+    	//readonly
+    	//设置为只读
+    	page.setReadOnly=function(){
+    		$("input").attr("readonly","readonly")
+    		$("textarea").attr("readonly","readonly")
+    	}
+    	page.setPage=function(value1,value2,value3){
+    		eleTitle.value=value1;
+    		 eleSummary.value=value2;
+    		 RE.editor.innerHTML=value3;
+    	}
+    
+    
+
+
+    </script>
+</body>
+</html>

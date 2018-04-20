@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="112" id="KGk-i7-Jjw" customClass="KMMUploadCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="111.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xvN-ub-KPJ">
+                        <rect key="frame" x="10" y="19" width="100" height="75"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="Mpp-Wi-yAd"/>
+                            <constraint firstAttribute="height" constant="75" id="ujZ-nz-AeZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYv-EA-mCB">
+                        <rect key="frame" x="120" y="25" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiH-5V-k2b">
+                        <rect key="frame" x="120" y="70.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvJ-LC-B66">
+                        <rect key="frame" x="260" y="21" width="50" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="zsZ-ef-0oQ"/>
+                        </constraints>
+                        <state key="normal" title="暂停"/>
+                        <connections>
+                            <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ebx-LL-CCT"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnA-Qw-Atn">
+                        <rect key="frame" x="271" y="70.5" width="39" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXR-pe-puu">
+                        <rect key="frame" x="172" y="79.5" width="89" height="2"/>
+                    </progressView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PiH-5V-k2b" firstAttribute="leading" secondItem="kYv-EA-mCB" secondAttribute="leading" id="1yo-a2-WYe"/>
+                    <constraint firstItem="xXR-pe-puu" firstAttribute="leading" secondItem="PiH-5V-k2b" secondAttribute="trailing" constant="10" id="6jh-YE-s0p"/>
+                    <constraint firstAttribute="trailing" secondItem="bnA-Qw-Atn" secondAttribute="trailing" constant="10" id="ADf-yU-hfx"/>
+                    <constraint firstItem="tvJ-LC-B66" firstAttribute="centerY" secondItem="kYv-EA-mCB" secondAttribute="centerY" id="Gxn-Fv-kpw"/>
+                    <constraint firstAttribute="bottom" secondItem="bnA-Qw-Atn" secondAttribute="bottom" constant="20" id="Lrm-fA-eWq"/>
+                    <constraint firstItem="bnA-Qw-Atn" firstAttribute="leading" secondItem="xXR-pe-puu" secondAttribute="trailing" constant="10" id="Myi-jT-bWD"/>
+                    <constraint firstItem="xXR-pe-puu" firstAttribute="centerY" secondItem="PiH-5V-k2b" secondAttribute="centerY" id="NBH-9Y-MKc"/>
+                    <constraint firstAttribute="bottom" secondItem="PiH-5V-k2b" secondAttribute="bottom" constant="20" id="OUW-Dj-eOX"/>
+                    <constraint firstItem="kYv-EA-mCB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="VOw-gj-e0a"/>
+                    <constraint firstItem="xvN-ub-KPJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Wiv-MC-9zT"/>
+                    <constraint firstItem="tvJ-LC-B66" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kYv-EA-mCB" secondAttribute="trailing" constant="10" id="XyW-1P-Mkx"/>
+                    <constraint firstItem="xvN-ub-KPJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gB5-OY-UWJ"/>
+                    <constraint firstAttribute="trailing" secondItem="tvJ-LC-B66" secondAttribute="trailing" constant="10" id="k65-3g-hWQ"/>
+                    <constraint firstItem="PiH-5V-k2b" firstAttribute="leading" secondItem="xvN-ub-KPJ" secondAttribute="trailing" constant="10" id="tOJ-1R-gIJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="image" destination="xvN-ub-KPJ" id="Bue-Gl-pmb"/>
+                <outlet property="statusBtn" destination="tvJ-LC-B66" id="Dho-xS-BSr"/>
+                <outlet property="titleLb" destination="kYv-EA-mCB" id="ZC2-P0-SvT"/>
+                <outlet property="upLoadStatus" destination="PiH-5V-k2b" id="d0f-OR-zYq"/>
+                <outlet property="uploadProgress" destination="xXR-pe-puu" id="HZc-XQ-W40"/>
+                <outlet property="uploadRate" destination="bnA-Qw-Atn" id="sqM-Po-vsy"/>
+            </connections>
+            <point key="canvasLocation" x="-154" y="-81"/>
+        </tableViewCell>
+    </objects>
+</document>
